@@ -10,6 +10,10 @@ class LinkedList:
         self.head = None
 
     def insert_at_beginning(self, value):
+        # Creates a new node with the given value
+        # Points the new node's next to the current head
+        # Updates head to be the new node
+        # Time complexity: O(1) — no traversal needed
         new_node = Node(value)
         new_node.next = self.head
         self.head = new_node
