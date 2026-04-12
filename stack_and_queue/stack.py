@@ -1,5 +1,3 @@
-import sys
-sys.path.append('../linked_list')
 from linked_list import LinkedList
 
 # TODO: Implement Stack using LinkedList
@@ -11,11 +9,11 @@ from linked_list import LinkedList
     # Add a quick test block at the bottom to verify it works
 
 class Stack:
-    def __init__(sefl):
+    def __init__(self):
         self.stack = LinkedList()
 
     def push(self, value):
-        self.stack.insert(value)
+        self.stack.insert_at_beginning(value)
 
     def pop(self):
         if self.stack.head is None:
