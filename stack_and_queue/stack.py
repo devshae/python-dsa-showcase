@@ -13,9 +13,11 @@ class Stack:
         self.stack = LinkedList()
 
     def push(self, value):
+        # Add a value to the top of the stack (which is the head of the linked list)
         self.stack.insert_at_beginning(value)
 
     def pop(self):
+        # Remove and return the value from the top of the stack (which is the head of the linked list)
         if self.stack.head is None:
             raise Exception('Stack is empty.')
         value = self.stack.head.value
@@ -23,11 +25,13 @@ class Stack:
         return value
 
     def peek(self):
+        # Return the value at the top of the stack without removing it
         if self.stack.head is None:
             raise Exception('Stack is empty.')
         return self.stack.head.value
 
     def is_empty(self):
+        # Return True if the stack is empty, False otherwise
         if self.stack.head is None:
             return True
         return False

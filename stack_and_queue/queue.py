@@ -13,9 +13,11 @@ class Queue:
         self.queue = LinkedList()
 
     def enqueue(self, value):
+        # Adds an item to the back of the line by inserting at the end of the linked list
         self.queue.insert_at_end(value)
 
     def dequeue(self):
+        # Removes and returns the item from the front of the line by removing the head of the linked list
         if self.queue.head is None:
             raise Exception('Queue is empty.')
         value = self.queue.head.value
@@ -23,16 +25,19 @@ class Queue:
         return value
 
     def peek(self):
+        # Returns the front item without removing it by returning the value of the head of the linked list
         if self.queue.head is None:
             raise Exception('Queue is empty.')
         return self.queue.head.value
     
     def is_empty(self):
+        # Returns True if the queue is empty by checking if the head of the linked list is None
         if self.queue.head is None:
             return True
         return False
     
     def show(self):
+        # Helper method to show the contents of the queue
         self.queue.traverse()
     
 # Test Code

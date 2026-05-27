@@ -19,6 +19,7 @@ class LinkedList:
         self.head = new_node
 
     def insert_at_end(self, value):
+        # Creates a new node with the given value
         new_node = Node(value)
         if self.head is None:
             self.head = new_node
@@ -29,6 +30,7 @@ class LinkedList:
         last_node.next = new_node
 
     def delete(self, value):
+        # Defines a method to delete a node with the given value from the linked list
         current_node = self.head
         previous_node = None
         while current_node:
@@ -42,6 +44,7 @@ class LinkedList:
             current_node = current_node.next
 
     def search(self, value):
+        # Defines a method to search for a value in the linked list
         current_node = self.head
         while current_node:
             if current_node.value == value:
@@ -50,12 +53,14 @@ class LinkedList:
         return False    
         
     def traverse(self):
+        # Defines a method to traverse the linked list and print each value
         current_node = self.head
         while current_node:
             print(current_node.value)
             current_node = current_node.next
 
     def length(self):
+        # Defines a method to calculate the length of the linked list
         count = 0
         current_node = self.head
         while current_node:
