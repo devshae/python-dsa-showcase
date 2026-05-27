@@ -6,22 +6,26 @@
     # traverse_in_order() — returns a list of values in the tree in sorted order
 
 class TreeNode:
+    # A simple class to represent a node in the binary search tree
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
 
 class BinarySearchTree:
+    # A class to represent the binary search tree itself
     def __init__(self):
         self.root = None
 
     def insert(self, value):
+        #  Inserts a value into the tree in the correct position
         if self.root is None:
             self.root = TreeNode(value)
         else:
             self.insert_node(self.root, value)
     
     def insert_node(self, node, value):
+        # Helper method to insert a value starting from a given node
         if value < node.value:
             if node.left is None:
                 node.left = TreeNode(value)
@@ -34,9 +38,11 @@ class BinarySearchTree:
                 self.insert_node(node.right, value)
     
     def search(self, value):
+        # Searches for a value in the tree and returns True if found, False otherwise
         return self.search_node(self.root, value)
     
     def search_node(self, node, value):
+        # Helper method to search for a value starting from a given node
         if node is None:
             return None # hit an empty spot, value not in tree
         if value == node.value:
@@ -47,9 +53,11 @@ class BinarySearchTree:
             return self.search_node(node.right, value)
         
     def in_order_traversal(self):
+        # Returns a list of values in the tree in sorted order
         return self.in_order_helper(self.root)
     
     def in_order_helper(self, node):
+        # Helper method to perform in-order traversal starting from a given node
         if node is None:
             return []
         return self.in_order_helper(node.left) + [node.value] + self.in_order_helper(node.right)
